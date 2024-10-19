@@ -16,15 +16,24 @@ function createCounter() {
     count += 1;
     return count;
   }
-  let decrment = () => {
+  let decrement = () => {
     count -= 1;
     return count;
   };
 
   return { increment, decrement };
 }
+
 console.log(counter.increment());
 console.log(counter.increment());
 console.log(counter.increment());
+
+let button = document.getElementById('counter')
+
+button.addEventListener('click', function() {
+  button.innerHTML = counter.increment()
+})
+
+
 // Hint: Use a closure to maintain the state of count.
 // Open your console and console log your counter to see its status, i.e. -> console.log('counter status: ', counter.increment())
